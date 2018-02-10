@@ -10,7 +10,7 @@ The doorctl system consist of:
 ## Communication
 
 - Device sends GET request to server @5000 with query parameter "card" containing comma separated card number, eg. ```3,06,4,40,2,45,106,921,265,7```
-- Example dev URL: ```http://localhost:5000/?card=3,06,4,40,2,45,106,921,265,7```
+    - Example dev URL: ```http://localhost:5000/?card=3,06,4,40,2,45,106,921,265,7```
 - Server responds with "yes" if the card is authorized, "no" otherwise
 
 ## Development
@@ -26,6 +26,14 @@ The doorctl system consist of:
 ```
 
 #### Usage
+
+Make sure your virtualenv is active, if it's not:
+
+```sh
+    . env/bin/activate
+```
+
+then:
 
 ```sh
     python3 main.py
