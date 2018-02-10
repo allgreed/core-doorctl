@@ -7,6 +7,24 @@ The doorctl system consist of:
 - server handling card authentication
 - microcontroller operating the door and reading RFID cards
 
+## Development
+
+### Server
+
+#### Instalation
+
+```sh
+    virtualenv env
+    . env/bin/activate
+    pip3 install flask
+```
+
+#### Usage
+
+```sh
+    python3 main.py
+```
+
 ## TODO:
 
 ### POC:
