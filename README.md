@@ -58,3 +58,9 @@ The doorctl system consist of:
 - Authenticate the server and the device
 - System handles more than 1 door
 - Don't authorize cards via their fucking ID...
+
+#### Probbably like never:
+
+- Do a CLI for manual door control for authorized users
+- Integrate with Hs master auth
+
