@@ -38,18 +38,18 @@ void loop() {
         RFIDSerial.println(Num);
       }
       RFIDSerial.println(Num);
-      if ((Num == Password1) || (Num == Password2)) //识别成功
-      {
-        for (int i = 0; i <= 50; i++) //
-        {
-          pulse(serpin, 180); //
-        }
-        delay(2000);
-        for (int i = 0; i <= 50; i++) //
-        {
-          pulse(serpin, 20); //
-        }
-      }
+//      if ((Num == Password1) || (Num == Password2)) //识别成功
+//      {
+//        for (int i = 0; i <= 50; i++) //
+//        {
+//          pulse(serpin, 180); //
+//        }
+//        delay(2000);
+//        for (int i = 0; i <= 50; i++) //
+//        {
+//          pulse(serpin, 20); //
+//        }
+//      }
       while (RFIDSerial.read() > 0); //
       RX_Flag = 0; //
       Num = 0; //
@@ -57,52 +57,52 @@ void loop() {
   }
 }
 
-
-String Read_database() {
-  rx_str = "";
-  //  WiFi.forceSleepWake();
-  delay(10);
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.print("connecting to ");
-  Serial.println(host);
-
-  // Use WiFiClient class to create TCP connections
-  WiFiClient client;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("connection failed");
-  }
-
-  //   We now create a URI for the request
-  String url = "/cards";
-  Serial.print("Requesting URL: ");
-  Serial.println(url);
-
-  // This will send the request to the server
-  client.print(String("GET ") +
-               url + " HTTP/1.1\r\n" + "Host: " + host + "\r\n" + "Accept: text/html" + "\r\n" + "Connection: close\r\n\r\n");
-  delay(10);
-
-  // Read all the lines of the reply from server and print them to Serial
-  Serial.println("Respond:");
-  while (client.available()) {
-    String readInfo = client.readStringUntil('\r');
-    Serial.print(readInfo);
-
-  }
-
-  Serial.println();
-  Serial.println("closing connection");
-  //  stopWiFiAndSleep();
-}
+//
+//String Read_database() {
+//  rx_str = "";
+//  //  WiFi.forceSleepWake();
+//  delay(10);
+//  Serial.print("Connecting to ");
+//  Serial.println(ssid);
+//  WiFi.begin(ssid, password);
+//  while (WiFi.status() != WL_CONNECTED) {
+//    delay(500);
+//    Serial.print(".");
+//  }
+//
+//  Serial.println("");
+//  Serial.println("WiFi connected");
+//  Serial.print("connecting to ");
+//  Serial.println(host);
+//
+//  // Use WiFiClient class to create TCP connections
+//  WiFiClient client;
+//  if (!client.connect(host, httpPort)) {
+//    Serial.println("connection failed");
+//  }
+//
+//  //   We now create a URI for the request
+//  String url = "/cards";
+//  Serial.print("Requesting URL: ");
+//  Serial.println(url);
+//
+//  // This will send the request to the server
+//  client.print(String("GET ") +
+//               url + " HTTP/1.1\r\n" + "Host: " + host + "\r\n" + "Accept: text/html" + "\r\n" + "Connection: close\r\n\r\n");
+//  delay(10);
+//
+//  // Read all the lines of the reply from server and print them to Serial
+//  Serial.println("Respond:");
+//  while (client.available()) {
+//    String readInfo = client.readStringUntil('\r');
+//    Serial.print(readInfo);
+//
+//  }
+//
+//  Serial.println();
+//  Serial.println("closing connection");
+//  //  stopWiFiAndSleep();
+//}
 
 void Read_ID(void)
 {
@@ -134,12 +134,12 @@ void Read_ID(void)
      flag=0;//
 }
 
-void stopWiFiAndSleep() {
-  WiFi.disconnect();
-  WiFi.mode(WIFI_OFF);
-  WiFi.forceSleepBegin();
-  delay(1);
-}
+//void stopWiFiAndSleep() {
+//  WiFi.disconnect();
+//  WiFi.mode(WIFI_OFF);
+//  WiFi.forceSleepBegin();
+//  delay(1);
+//}
 
 void pulse( int serpin,int angle)
 {
