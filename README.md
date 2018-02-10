@@ -1,6 +1,12 @@
 # core-doorctl
 Hackserspace door control system via RFID cards
 
+## System "architecture"
+
+The doorctl system consist of:
+- server handling card authentication
+- microcontroller operating the door and reading RFID cards
+
 ## TODO:
 
 ### POC:
