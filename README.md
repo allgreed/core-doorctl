@@ -42,6 +42,7 @@ The doorctl system consist of:
 
 ### Initial:
 
+- Rename the device file
 - Server logs request to logfile -> person or card id
 - Dockerized server with instruction
 - Run on HS infrastructure
@@ -54,6 +55,7 @@ The doorctl system consist of:
 - Move ESP credentials from code to memory
     - Add a program to upload them
 
+- Create a Makefile to ditch the shitty ArduinoIDE
 - Encrypt communication between device and server
 - Authenticate the server and the device
 - System handles more than 1 door
